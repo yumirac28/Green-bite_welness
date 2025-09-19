@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenBite - Healthy Recipes</title>
+    <link rel="stylesheet" href="recipes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    
+<!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/—Pngtree—wellness people logo design template_3554499.jpg" alt="GreenBite">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="recipes.html">Meals</a></li>
+                <li><a href="workout.html">Exercise</a></li>
+                <li><a href="mindfulness.html">Mindfulness</a></li>
+                <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+
+
+
+
+    <!-- Recipe Search and Filter -->
+    <section class="recipe-controls">
+        <div class="search-container">
+            <input type="text" id="recipe-search" placeholder="Search recipes...">
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="filter-container">
+            <select id="category-filter">
+                <option value="all">All Categories</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="snack">Snacks</option>
+                <option value="dessert">Desserts</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- Recipe Cards -->
+    <section class="recipes-container">
+        <h2>Healthy Recipes</h2>
+        <div class="recipes-grid" id="recipes-grid">
+            <!-- Recipe cards will be inserted here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Recipe Modal -->
+    <div class="modal" id="recipe-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <img id="modal-image" src="" alt="">
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+            </div>
+            <div class="modal-body">
+                <div class="ingredients-section">
+                    <h3>Ingredients</h3>
+                    <ul id="ingredients-list"></ul>
+                </div>
+                <div class="instructions-section">
+                    <h3>Instructions</h3>
+                    <ol id="instructions-list"></ol>
+                </div>
+                <div class="nutrition-section">
+                    <h3>Nutrition Information</h3>
+                    <table id="nutrition-table">
+                        <thead>
+                            <tr>
+                                <th>Nutrient</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="recipes.js"></script>
+</body>
+</html>
