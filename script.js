@@ -2,18 +2,20 @@
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-});
-
-// Close mobile menu when clicking a link
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
+if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
     });
-});
+    
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+}
 
 // Rotating Health Quotes
 const quotes = [
@@ -65,6 +67,17 @@ function getDailyTip() {
 }
 
 document.getElementById('daily-tip').textContent = getDailyTip();
+
+// Newsletter Banner subscription
+document.getElementById('banner-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const email = document.getElementById('banner-email').value.trim();
+  if (email) {
+    localStorage.setItem('bannerNewsletter', email);
+    document.getElementById('banner-msg').textContent = "Thanks for joining our community!";
+    document.getElementById('banner-email').value = '';
+  }
+});
 
 // Newsletter Subscription
 const newsletterForm = document.getElementById('newsletter-form');

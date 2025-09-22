@@ -19,7 +19,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--bg-color);
+    background: var(--bg-color);
 }
 
 .container {
@@ -42,11 +42,12 @@ header {
 .logo img {
     height: 100px;
     padding: 20px 0;
+    margin-right: auto;
 }
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -152,60 +153,204 @@ nav {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Featured Sections */
+.featured-sections {
+  padding: 3rem 2rem;
+  background: #f8f8f8;
+  text-align: center;
+}
+.featured-sections h2 {
+  margin-bottom: 2rem;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.card {
+  background-color: #8BC34A;
+  color: #f0f0f0;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.card h3 {
+  margin-bottom: 0.5rem;
+}
+.card .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: darkolivegreen;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.card .btn:hover {
+  background: #2E7D32;
+}
+
+/* Testimonials */
+.testimonials {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #fff;
+}
+.testimonials h2 {
+  margin-bottom: 1.5rem;
+}
+.testimonials blockquote {
+  font-style: italic;
+  margin: 1rem auto;
+  max-width: 600px;
+  background: #f0f0f0;
+  padding: 1rem;
+  border-radius: 8px;
+}
+.testimonials cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+/* Newsletter Banner */
+.newsletter-banner {
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  color: white;
+}
+
+.newsletter-banner h2 {
+  margin-bottom: 0.5rem;
+}
+
+.newsletter-banner form {
+  margin-top: 1rem;
+}
+
+.newsletter-banner input {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 6px;
+  margin-right: 0.5rem;
+}
+
+.newsletter-banner button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  background: #fff;
+  color: #2ecc71;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.newsletter-banner button:hover {
+  background: #f0f0f0;
+}
+
+
 /* Footer */
 footer {
     background-color: var(--secondary-color);
     color: var(--light-text);
     padding: 60px 0 20px;
+    text-align: center;
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
     margin-bottom: 40px;
 }
 
-.footer-logo {
-    height: 50px;
-    margin-bottom: 20px;
-}
-
-.footer-section h3 {
-    margin-bottom: 20px;
-    font-size: 1.2rem;
-}
-
-.footer-section ul {
-    list-style: none;
-}
-
-.footer-section ul li {
-    margin-bottom: 10px;
-}
-
-.footer-section ul li a {
-    color: var(--light-text);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-section ul li a:hover {
-    color: var(--accent-color);
+.footer-section {
+    text-align: center;
+    max-width: 500px;
 }
 
 #newsletter-form {
     display: flex;
+    justify-content: center;
     margin-top: 20px;
 }
 
-#newsletter-email {
+#newsletter-form input {
     flex: 1;
+    max-width: 300px;
     padding: 10px;
     border: none;
     border-radius: 4px 0 0 4px;
 }
 
-.btn-small {
+#newsletter-form button {
     background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#newsletter-form button:hover {
+    background-color: var(--accent-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hamburger menu styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: 20px;
+}
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* Mobile styles */
+@media (max-width: 900px) {
+  .nav-links {
+    position: fixed;
+    left: -100%;
+    top: 80px;
+    flex-direction: column;
+    background: #fff;
+    width: 100%;
+    text-align: center;
+    transition: left 0.3s;
+    z-index: 999;
+    box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+  }
+  .nav-links.active {
+    left: 0;
+  }
+  .nav-links li {
+    margin: 20px 0;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Hamburger animation */
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }

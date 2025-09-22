@@ -1,35 +1,39 @@
 /* Base Styles */
 :root {
-    --primary: #4CAF50;
-    --secondary: #2E7D32;
-    --accent: #8BC34A;
-    --light: #f8f9fa;
-    --dark: #212529;
-    --gray: #6c757d;
+    --primary-color: #4CAF50;
+    --secondary-color: #2E7D32;
+    --accent-color: #8BC34A;
+    --text-color: #333;
+    --light-text: #f8f8f8;
+    --bg-color: #f9f9f9;
+    --card-bg: #ffffff;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: var(--dark);
-    background-color: var(--light);
-    padding-top: 80px;
+    color: var(--text-color);
+    background: url('images/ferdinand-stohr-iW1WzbuWMcA-unsplash.jpg');
+    padding-top: 120px;
 }
 
-/* Navigation - Same as previous pages */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #2E7D32;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
@@ -37,7 +41,15 @@ body {
 }
 
 .logo img {
-    height: 50px;
+    height: 100px;
+    padding: 20px 0;
+    margin-right: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav-links {
@@ -46,18 +58,18 @@ body {
 }
 
 .nav-links li {
-    margin-left: 2rem;
+    margin-left: 30px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: var(--dark);
+    color: var(--text-color);
     font-weight: 500;
     transition: color 0.3s;
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: var(--primary);
+    color: var(--primary-color);
 }
 
 .hamburger {
@@ -65,56 +77,136 @@ body {
     cursor: pointer;
 }
 
-.hamburger .bar {
-    display: block;
+.hamburger .line {
     width: 25px;
     height: 3px;
-    margin: 5px auto;
-    background-color: var(--dark);
+    background-color: var(--text-color);
+    margin: 5px;
     transition: all 0.3s ease;
 }
 
-/* Mindfulness Section */
-.mindfulness-section {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+
+/* Main Content Box */
+.main-content {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  text-align: center;
 }
 
-.mindfulness-section h1 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: var(--primary);
+.main-content section {
+  display: block;
+  padding: 40px 20px;  /* adds space top & bottom */
+  margin-top: 70px;   /* ensures not hidden under navbar */
+  margin-bottom: 40px;
 }
 
-.mindfulness-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
+/* Section styling */
+.main-content section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
-/* Breathing Exercise */
-.breathing-exercise {
-    background: white;
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.breathing-animation {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 250px;
-    margin: 1rem 0;
-}
-
+/* Breathing Circle */
 .circle {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background-color: var(--accent);
-    transition: all 4s ease-in;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: #a5d6a7;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #2e7d32;
+  transition: transform 3s ease-in-out, background 0.5s;
+}
+
+/* Timer Display */
+#timer-display {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2e7d32;
+  margin: 15px 0;
+}
+
+/* Range slider */
+#volume {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Buttons uniform */
+button {
+  margin: 5px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #2e7d32;
+  color: white;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+button:hover {
+  background: #256429;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: 20px;
+}
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* Mobile styles */
+@media (max-width: 900px) {
+  .nav-links {
+    position: fixed;
+    left: -100%;
+    top: 80px;
+    flex-direction: column;
+    background: #fff;
+    width: 100%;
+    text-align: center;
+    transition: left 0.3s;
+    z-index: 999;
+    box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+  }
+  .nav-links.active {
+    left: 0;
+  }
+  .nav-links li {
+    margin: 20px 0;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Hamburger animation */
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }

@@ -6,23 +6,30 @@
     <title>GreenBite - Contact Us</title>
     <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation - Same as Homepage -->
     <header>
         <nav class="navbar">
-            <div class="logo">
-                <img src="images/—Pngtree—wellness people logo design template_3554499.jpg" alt="GreenBite">
+           <div class="logo">
+                <img src="images/—Pngtree—wellness people logo design template_3554499.jpg" alt="Logo">
+                <button class="menu-toggle" aria-label="Toggle menu" style="display: none;">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="calculator.html">Calculator</a></li>
-                <li><a href="recipes.html">Meals</a></li>
-                <li><a href="workout.html">Exercise</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="workout.html">Workouts</a></li>
                 <li><a href="mindfulness.html">Mindfulness</a></li>
-                <li><a href="contact.html">Contact</a></li>
-
-            </ul>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>    
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -30,65 +37,72 @@
             </div>
         </nav>
     </header>
-    <!-- Contact Section -->
-    <section class="contact-section">
+
+    <!-- Main Contact Content -->
+    <main class="contact-main">
         <h1>Contact GreenBite</h1>
+        <p>We'd love to hear from you! Send us a message or visit our headquarters.</p>
         
         <div class="contact-container">
-            <!-- Contact Form -->
+            <!-- Left: Feedback Form -->
             <div class="contact-form">
-                <h2>Send Us Feedback</h2>
+                <h3>Send Us Feedback</h3>
                 <form id="feedback-form">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" id="name" required>
-                        <span class="error-message" id="name-error"></span>
+                        <input type="text" id="name" name="name">
+                        <span id="name-error" class="error-message"></span>
                     </div>
+                    
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" required>
-                        <span class="error-message" id="email-error"></span>
+                        <input type="email" id="email" name="email">
+                        <span id="email-error" class="error-message"></span>
                     </div>
+                    
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" rows="5" required></textarea>
-                        <span class="error-message" id="message-error"></span>
+                        <textarea id="message" name="message" rows="5"></textarea>
+                        <span id="message-error" class="error-message"></span>
                     </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
+                    
+                    <button type="submit">Send Message</button>
                 </form>
-                <div class="confirmation-message" id="confirmation-message"></div>
+                <div id="confirmation-message" class="confirmation"></div>
             </div>
-            
-            <!-- Contact Info -->
+
+            <!-- Right: Info -->
             <div class="contact-info">
-                <h2>Our Information</h2>
-                <div class="info-card">
+                <h3>Our Information</h3>
+                <div class="info-item">
                     <i class="fas fa-map-marker-alt"></i>
                     <div>
-                        <h3>Address</h3>
+                        <strong>Address:</strong>
                         <p>123 Wellness Way, Health City, HC 12345</p>
                     </div>
                 </div>
-                <div class="info-card">
+                
+                <div class="info-item">
                     <i class="fas fa-phone"></i>
                     <div>
-                        <h3>Phone</h3>
+                        <strong>Phone:</strong>
                         <p>(123) 456-7890</p>
                     </div>
                 </div>
-                <div class="info-card">
+                
+                <div class="info-item">
                     <i class="fas fa-envelope"></i>
                     <div>
-                        <h3>Email</h3>
+                        <strong>Email:</strong>
                         <p>info@greenbite.com</p>
                     </div>
                 </div>
-                <div class="info-card">
+                
+                <div class="info-item">
                     <i class="fas fa-clock"></i>
                     <div>
-                        <h3>Hours</h3>
-                        <p>Monday - Friday: 9am - 6pm</p>
-                        <p>Saturday: 10am - 4pm</p>
+                        <strong>Hours:</strong>
+                        <p>Mon - Fri: 9am - 6pm</p>
                     </div>
                 </div>
                 
@@ -151,7 +165,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
     <script src="contact.js"></script>
 </body>

@@ -15,17 +15,21 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <img src="images/—Pngtree—wellness people logo design template_3554499.jpg" alt="GreenBite">
+            <img src="images/—Pngtree—wellness people logo design template_3554499.jpg" alt="Logo">
+            <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="calculator.html">Calculator</a></li>
-                <li><a href="recipes.html">Meals</a></li>
-                <li><a href="workout.html">Exercise</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="workout.html">Workouts</a></li>
                 <li><a href="mindfulness.html">Mindfulness</a></li>
                 <li><a href="contact.html">Contact</a></li>
-
-            </ul>
+            </ul>    
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -40,9 +44,6 @@
             <h1>Nourish Your Body & Mind</h1>
             <div class="quote-container">
                 <p class="rotating-quote">"Your health is an investment, not an expense."</p>
-            </div>
-            <a href="#" class="btn">Start Your Journey</a>
-        </div>
     </section>
 
     <!-- Daily Tip Section -->
@@ -53,31 +54,68 @@
         </div>
     </section>
 
+    <!-- Featured Sections -->
+<section class="featured-sections">
+  <h2>Explore More</h2>
+  <div class="card-grid">
+    <div class="card">
+      <h3>Healthy Eating</h3>
+      <p>Discover balanced meals and nutrition tips for a healthier lifestyle.</p>
+      <a href="recipes.html" class="btn">View Recipes</a>
+    </div>
+    <div class="card">
+      <h3>Quick Workouts</h3>
+      <p>Short routines you can do anywhere to stay active and strong.</p>
+      <a href="workout.html" class="btn">Start Workout</a>
+    </div>
+    <div class="card">
+      <h3>Mindful Living</h3>
+      <p>Guided practices to improve focus, reduce stress, and feel calm.</p>
+      <a href="mindfulness.html" class="btn">Try Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <h2>What People Say</h2>
+  <blockquote>
+    “GreenBite helped me transform my habits — I feel healthier every day!”
+    <cite>— Ayesha, 27</cite>
+  </blockquote>
+  <blockquote>
+    “Simple workouts and recipes that actually fit into my busy routine.”
+    <cite>— Dilan, 34</cite>
+  </blockquote>
+</section>
+
+<!-- Newsletter Banner -->
+<section class="newsletter-banner">
+  <h2>Join Our Health Community</h2>
+  <p>Get weekly tips, workouts, and recipes straight to your inbox.</p>
+  <form id="banner-form">
+    <input type="email" id="banner-email" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
+  </form>
+  <p id="banner-msg"></p>
+</section>
+
+
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Meals</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Newsletter</h3>
-                <form id="newsletter-form">
-                    <input type="email" id="email-input" placeholder="Your email" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-                <p id="subscription-message"></p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2023 GreenBite. All rights reserved.</p>
-        </div>
-    </footer>
+   <!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <h3>Newsletter</h3>
+        <form id="newsletter-form">
+            <input type="email" id="email-input" placeholder="Your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+        <p id="subscription-message"></p>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 GreenBite. All rights reserved.</p>
+    </div>
+</footer>
 
     <script src="script.js"></script>
 </body>

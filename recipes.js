@@ -156,18 +156,20 @@ const categoryFilter = document.getElementById('category-filter');
 const recipeModal = document.getElementById('recipe-modal');
 const closeModal = document.querySelector('.close-modal');
 
-// Display all recipes on page load
-document.addEventListener('DOMContentLoaded', () => {
-    displayRecipes(recipes);
-    
-    // Mobile navigation toggle (same as home page)
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    
+// Mobile Navigation Toggle (moved outside DOMContentLoaded)
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navLinks.classList.toggle('active');
     });
+}
+
+// Display all recipes on page load
+document.addEventListener('DOMContentLoaded', () => {
+    displayRecipes(recipes);
 });
 
 // Display recipes function
